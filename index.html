@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🥳</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #333;
+        }
+        audio {
+            margin-top: 20px;
+        }
+        /* Кнопка для розгортання тексту */
+        .toggle-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .toggle-button:hover {
+            background-color: #45a049;
+        }
+        /* Блок тексту пісні (спочатку прихований) */
+        .lyrics {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            width: 80%;
+            margin-top: 10px;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        /* Стиль для тексту, коли блок розкрито */
+        .lyrics.open {
+            max-height: 500px; /* Підібрати потрібну висоту */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🥳Вітаю з днем народження, Серьоня!🥳</h1>
+    <p>Тикай сюди, я пердоле 👇</p>
+    
+    <!-- Блок для аудіофайлу -->
+    <audio controls>
+        <source src="your-audio-file.mp3" type="audio/mp3">
+        Ваш браузер не підтримує аудіо елемент.
+    </audio>
+
+    <!-- Кнопка для відкриття тексту пісні -->
+    <button class="toggle-button" onclick="toggleLyrics()">Текст пісні</button>
+
+    <!-- Текст пісні -->
+    <div id="lyrics" class="lyrics" style="padding: 10px; max-width: 600px; margin: auto; height: 200px; overflow-y: auto; border: 1px solid #ccc; border-radius: 5px;">
+        <p style="text-align: center;">
+            <strong>Куплет:</strong><br>
+            Сергій гуляє біля річки,<br>
+            Шукає бобра, мов скарб у скриньці.<br>
+            "Де ти, курва бобер," - кличе він щиро,<br>
+            Бо тільки бобра йому треба, не в кіно!
+        </p>
+    
+        <p style="text-align: center;">
+            <strong>Приспів:</strong><br>
+            Сергій любить бобра, курва, це точно,<br>
+            Ходить за ним всюди, вдень і вночі охоче.<br>
+            "Яке ж це бідло, але файне ж, як є,"<br>
+            Сергій зізнається, аж сміх бере!
+        </p>
+    
+        <p style="text-align: center;">
+            <strong>Куплет 2:</strong><br>
+            Як тільки зранку сонце сяє,<br>
+            Сергій на бобра завжди чекає.<br>
+            "Цо за бідле курче, таке круте,<br>
+            Мій любий бобер, але ґрубе!"
+        </p>
+    
+        <p style="text-align: center;">
+            <strong>Приспів:</strong><br>
+            Сергій любить бобра, курва, це точно,<br>
+            Ходить за ним всюди, вдень і вночі охоче.<br>
+            "Яке ж це бідло, але файне ж, як є,"<br>
+            Сергій зізнається, аж сміх бере!
+        </p>
+    
+        <p style="text-align: center;">
+            <strong>Бридж:</strong><br>
+            Всі на селі вже знають давно,<br>
+            Сергій і бобер — то казка на двох.<br>
+            Він зоре річку, де бобра знайде,<br>
+            Тільки для нього той бобер живе!
+        </p>
+    
+        <p style="text-align: center;">
+            <strong>Приспів:</strong><br>
+            Сергій любить бобра, курва, це точно,<br>
+            Ходить за ним всюди, вдень і вночі охоче.<br>
+            "Яке ж це бідло, але файне ж, як є,"<br>
+            Сергій зізнається, аж сміх бере!
+        </p>
+    </div>
+
+    <script>
+        function toggleLyrics() {
+            const lyrics = document.getElementById("lyrics");
+            const button = document.querySelector(".toggle-button");
+            lyrics.classList.toggle("open");
+            button.textContent = lyrics.classList.contains("open") ? "Сховати текст пісні" : "Показати текст пісні";
+        }
+    </script>
+
+</body>
+</html>
